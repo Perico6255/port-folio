@@ -3,7 +3,6 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://perico6255.github.io/port-folio/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
