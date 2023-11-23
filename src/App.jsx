@@ -1,5 +1,6 @@
 import { Link, Route, Routes } from 'react-router-dom'
 import Home from './components/Home';
+import './css/App.css'
 
 import './css/Header.css'
 function About() {
@@ -15,22 +16,17 @@ function App() {
   return (
     <>
       <div className='header-links'>
-        <div className='box-header-links box-home'>
-          <Link to="/">Home</Link>
-        </div>
-        <div className='box-header-links box-about'>
-          <Link to="/about">About</Link>
-        </div>
-        <div className='box-header-links box-projects'>
-          <Link to="/projects">Proyectos</Link>
-        </div>
+          <Link className='box-header-links box-home' to="/">Home</Link>
+          <Link className='box-header-links box-about' to="/about">About</Link>
+          <Link className='box-header-links box-projects' to="/projects">Proyectos</Link>
       </div>
-      <h1>App</h1>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/projects" element={<Projects />} />
-        <Route path="/about" element={<About />} />
-      </Routes>
+      <div className='container'>
+        <Routes >
+          <Route path="/" element={<Home />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/about" element={<About />} />
+        </Routes>
+      </div>
     </>
   )
 }

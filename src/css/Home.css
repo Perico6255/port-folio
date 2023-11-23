@@ -1,0 +1,30 @@
+@import './colors.css';
+
+
+.myself-container {
+    margin-top: 5%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.title-myself{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.title-myself-1{
+    height: 50px;
+    color: var(--text);
+    font-size: 40px;
+}
+.title-myself-2{
+    color: var(--mauve);
+    height: 50px;
+    font-size: 50px;
+}
+.img{
+    height: 400px;
+    width: 300px;
+    background-color: var(--mauve);
+}
