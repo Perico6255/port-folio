@@ -1,0 +1,16 @@
+@import "@catppuccin/palette/style";
+
+.header-links{
+    display: flex;
+    background-color: var(--base);
+    height: 50px;
+}
+
+.box-header-links{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0px 20px;
+}

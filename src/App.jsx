@@ -1,13 +1,12 @@
-import { Link, Route, Router, Routes } from 'react-router-dom'
+import { Link, Route, Routes } from 'react-router-dom'
+import Home from './components/Home';
 
-function Home() {
-  return <h2>Home</h2>
-}
+import './css/Header.css'
 function About() {
   return <h2>About</h2>
 }
-function Users() {
-  return <h2>Users</h2>
+function Projects() {
+  return <h2>Projects</h2>
 }
 
 
@@ -15,18 +14,23 @@ function Users() {
 function App() {
   return (
     <>
-      <div>
-        <Link to="/">Home</Link>
-        <Link to="/about">About</Link>
-        <Link to="/users">Users</Link>
+      <div className='header-links'>
+        <div className='box-header-links box-home'>
+          <Link to="/">Home</Link>
+        </div>
+        <div className='box-header-links box-about'>
+          <Link to="/about">About</Link>
+        </div>
+        <div className='box-header-links box-projects'>
+          <Link to="/projects">Proyectos</Link>
+        </div>
       </div>
       <h1>App</h1>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/projects" element={<Projects />} />
         <Route path="/about" element={<About />} />
-        <Route path="/users" element={<Users />} />
       </Routes>
-
     </>
   )
 }

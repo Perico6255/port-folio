@@ -1,0 +1,11 @@
+@import './colors.css';
+body{
+    margin: 0px;
+    padding: 0px;
+    background-color: var(--surface0);
+    color: var(--text)
+}
+a{
+    text-decoration: none;
+    color: var(--mauve);
+}
