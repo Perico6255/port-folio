@@ -7,9 +7,8 @@ function App() {
 
   const handleSubmit =  () => {
     setResult('cargando...');
-    const url = "http://localhost:8080/saludar";
 
-    axios.get(url).then(response => {
+    axios.get(inputValue).then(response => {
       setResult(response.data);
     })
     .catch(error => {
