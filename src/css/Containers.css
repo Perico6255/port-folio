@@ -1,0 +1,19 @@
+
+.cabecera{
+    position:  fixed;
+    color: var(--base);
+}
+.big-container{
+    display: flex;
+    flex-direction: column;
+}
+.home-container{
+    background-color: var(--surface0);
+    height:100vh;
+    margin: 0px;
+}
+.projects-container{
+    background-color: var(--text);
+    height:100vh;
+    margin: 0px;
+}

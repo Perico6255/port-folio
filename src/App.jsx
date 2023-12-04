@@ -1,34 +1,45 @@
-import { Link, Route, Routes } from 'react-router-dom'
-import Home from './components/Home';
-import './css/App.css'
-
-import './css/Header.css'
-function About() {
-  return <h2>About</h2>
-}
-function Projects() {
-  return <h2>Projects</h2>
-}
-
-
+import React, { useState } from 'react';
+import axios from 'axios';
 
 function App() {
+  const [inputValue, setInputValue] = useState('');
+  const [result, setResult] = useState('vacio');
+
+  const handleSubmit =  () => {
+    setResult('cargando...');
+    const url = "http://localhost:8080/saludar";
+
+    axios.get(url).then(response => {
+      setResult(response.data);
+    })
+    .catch(error => {
+      // Manejar errores en caso de que ocurran
+      console.error('Error al realizar la solicitud:', error.message);
+      setResult('Error al realizar la solicitud');
+    });
+  };
+
   return (
-    <>
-      <div className='header-links'>
-          <Link className='box-header-links box-home' to="/">Home</Link>
-          <Link className='box-header-links box-about' to="/about">About</Link>
-          <Link className='box-header-links box-projects' to="/projects">Proyectos</Link>
-      </div>
-      <div className='container'>
-        <Routes >
-          <Route path="/" element={<Home />} />
-          <Route path="/projects" element={<Projects />} />
-          <Route path="/about" element={<About />} />
-        </Routes>
-      </div>
-    </>
-  )
+    <div className="App">
+      <h1>Aplicación React con Petición</h1>
+      
+      {/* Input de texto */}
+      <input
+        type="text"
+        value={inputValue}
+        onChange={(e) => setInputValue(e.target.value)}
+        placeholder="Ingrese la URL"
+      />
+
+      {/* Texto para mostrar el resultado */}
+
+      <p>{inputValue}</p>
+      <p>{result}</p>
+
+      {/* Botón para realizar la petición */}
+      <button onClick={handleSubmit}>Hacer Petición</button>
+    </div>
+  );
 }
 
-export default App
+export default App;
